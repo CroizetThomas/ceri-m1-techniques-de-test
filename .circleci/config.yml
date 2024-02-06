@@ -2,7 +2,7 @@
 # Stacks detected: deps:java:.
 version: 2.1
 jobs:
-  test-java:
+  build:
     docker:
       - image: circleci/openjdk:17-jdk
     steps:
@@ -11,8 +11,9 @@ jobs:
           name: Tests
           command: mvn test
 workflows:
-  jobs:
-    - build:
-       filters:
-          branches:
-            only: master
+  build:
+    jobs:
+      - build:
+        filters:
+            branches:
+              only: master
