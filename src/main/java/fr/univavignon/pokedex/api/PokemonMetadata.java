@@ -1,4 +1,4 @@
-package src.main.java.fr.univavignon.pokedex.api;
+package fr.univavignon.pokedex.api;
 
 /**
  * Pokemon metadata POJO.
