@@ -10,11 +10,10 @@ jobs:
       - run:
           name: Tests
           command: mvn test
-    filters:
-      branches:
-        only:
-          - master
 workflows:
   build-and-test:
     jobs:
-      - test-java
+      - build:
+          filters:
+            branches:
+              only: master
