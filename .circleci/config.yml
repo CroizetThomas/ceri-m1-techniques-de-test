@@ -1,0 +1,20 @@
+# This config was automatically generated from your source code
+# Stacks detected: deps:java:.
+version: 2.1
+jobs:
+  test-java:
+    docker:
+      - image: circleci/openjdk:17-jdk
+    steps:
+      - checkout
+      - run:
+          name: Tests
+          command: mvn test
+    filters:
+      branches:
+        only:
+          - master
+workflows:
+  build-and-test:
+    jobs:
+      - test-java
