@@ -4,14 +4,20 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class IPokemonMetadataProviderTest {
 
+    private IPokemonMetadataProvider metadataProvider;
     private PokemonMetadata pokemonMetadata;
 
     @Before
-    public void setUp() {
-        pokemonMetadata = new PokemonMetadata(1, "Bulbasaur", 49, 49, 45);
+    public void setUp() throws PokedexException {
+
+        metadataProvider = mock(IPokemonMetadataProvider.class);
+        when(metadataProvider.getPokemonMetadata(1)).thenReturn(new PokemonMetadata(1, "Bulbasaur", 49, 49, 45));
+        pokemonMetadata = metadataProvider.getPokemonMetadata(1);
     }
 
     @Test

@@ -1,6 +1,8 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,10 +10,12 @@ import org.junit.Test;
 public class IPokemonFactoryTest {
 
     private Pokemon pokemon;
+    private IPokemonMetadataProvider iPokemonMetadataProvider;
 
     @Before
-    public void setUp() {
-        PokemonMetadata metadata = new PokemonMetadata(1, "Bulbasaur", 49, 49, 45);
+    public void setUp() throws PokedexException {
+        iPokemonMetadataProvider = mock(IPokemonMetadataProvider.class);
+        when(iPokemonMetadataProvider.getPokemonMetadata(1)).thenReturn(new PokemonMetadata(1, "Bulbasaur", 49, 49, 45));
         pokemon = new Pokemon(1, "Bulbasaur", 49, 49, 45, 10, 20, 100, 5, 90.5);
     }
 
@@ -39,15 +43,5 @@ public class IPokemonFactoryTest {
     public void testIV() {
         assertEquals(90.5, pokemon.getIv(), 0.01);
     }
-
-    @Test
-    public void testMetadata() {
-        assertEquals(1, pokemon.getIndex());
-        assertEquals("Bulbasaur", pokemon.getName());
-        assertEquals(49, pokemon.getAttack());
-        assertEquals(49, pokemon.getDefense());
-        assertEquals(45, pokemon.getStamina());
-    }
-
 }
 
