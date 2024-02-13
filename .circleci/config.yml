@@ -2,7 +2,7 @@
 # Stacks detected: deps:java:.
 version: 2.1
 jobs:
-  build:
+  test: #??
     docker:
       - image: circleci/openjdk:17-ea-buster-node-browsers-legacy
     steps:
@@ -13,7 +13,7 @@ jobs:
 workflows:
   build:
     jobs:
-      - build:
+      - test: #??
         filters:
-            branches:
-              only: master
+          branches:
+            only: master
