@@ -9,39 +9,48 @@ import org.junit.Test;
 
 public class IPokemonFactoryTest {
 
-    private Pokemon pokemon;
-    private IPokemonMetadataProvider iPokemonMetadataProvider;
+    private Pokemon pokemonBulbizarre;
+    private Pokemon pokemonAquali;
 
     @Before
     public void setUp() throws PokedexException {
-        iPokemonMetadataProvider = mock(IPokemonMetadataProvider.class);
-        when(iPokemonMetadataProvider.getPokemonMetadata(1)).thenReturn(new PokemonMetadata(1, "Bulbasaur", 49, 49, 45));
-        pokemon = new Pokemon(1, "Bulbasaur", 49, 49, 45, 10, 20, 100, 5, 90.5);
+        IPokemonMetadataProvider iPokemonMetadataProvider = mock(IPokemonMetadataProvider.class);
+
+        when(iPokemonMetadataProvider.getPokemonMetadata(0)).thenReturn(new PokemonMetadata(0, "Bulbizarre", 126, 126, 90));
+        when(iPokemonMetadataProvider.getPokemonMetadata(133)).thenReturn(new PokemonMetadata(133, "Aquali", 186, 168, 260));
+
+        pokemonBulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+        pokemonAquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
     }
 
     @Test
     public void testCP() {
-        assertEquals(10, pokemon.getCp());
+        assertEquals(613, pokemonBulbizarre.getCp());
+        assertEquals(2729, pokemonAquali.getCp());
     }
 
     @Test
     public void testHP() {
-        assertEquals(20, pokemon.getHp());
+        assertEquals(64, pokemonBulbizarre.getHp());
+        assertEquals(202, pokemonAquali.getHp());
     }
 
     @Test
     public void testDust() {
-        assertEquals(100, pokemon.getDust());
+        assertEquals(4000, pokemonBulbizarre.getDust());
+        assertEquals(5000, pokemonAquali.getDust());
     }
 
     @Test
     public void testCandy() {
-        assertEquals(5, pokemon.getCandy());
+        assertEquals(4, pokemonBulbizarre.getCandy());
+        assertEquals(4, pokemonAquali.getCandy());
     }
 
     @Test
     public void testIV() {
-        assertEquals(90.5, pokemon.getIv(), 0.01);
+        assertEquals(56, pokemonBulbizarre.getIv(), 0.01);
+        assertEquals(100, pokemonAquali.getIv(), 0.01);
     }
 }
 
