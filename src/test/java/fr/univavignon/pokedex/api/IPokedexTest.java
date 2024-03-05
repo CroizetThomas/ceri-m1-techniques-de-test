@@ -16,14 +16,11 @@ public class IPokedexTest {
 
 
     @Before
-    public void setUp() throws PokedexException {
+    public void setUp() {
         pokedex = new Pokedex();
 
         pokemonBulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
         pokemonAquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
-
-        pokedex.addPokemon(pokemonBulbizarre);
-        pokedex.addPokemon(pokemonAquali);
     }
 
 
