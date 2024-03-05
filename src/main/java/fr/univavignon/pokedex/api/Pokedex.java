@@ -4,7 +4,11 @@ import java.util.*;
 
 public class Pokedex implements IPokedex{
 
-    List<Pokemon> pokemons = null;
+    List<Pokemon> pokemons;
+
+    Pokedex(){
+        pokemons = new ArrayList<>();
+    }
 
     @Override
     public int size() {
