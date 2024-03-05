@@ -1,8 +1,11 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -49,5 +52,18 @@ public class IPokedexTest {
     public void testGetPokemons() {
         assertEquals(Arrays.asList(pokemonBulbizarre, pokemonAquali), pokedex.getPokemons());
     }
+
+    @Test
+    public void testGetPokemonsWithOrder() {
+        Comparator<Pokemon> nameComparator = Comparator.comparing(Pokemon::getName);
+
+        List<Pokemon> sortedPokemons = pokedex.getPokemons(nameComparator);
+
+        assertThrows(UnsupportedOperationException.class, () -> sortedPokemons.add(pokemonBulbizarre));
+
+        List<Pokemon> expectedSort = Arrays.asList(pokemonAquali, pokemonBulbizarre);
+        assertEquals(expectedSort, sortedPokemons);
+    }
+
 
 }
