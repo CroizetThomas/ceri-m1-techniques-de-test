@@ -8,6 +8,7 @@ public class Pokedex implements IPokedex{
 
     Pokedex(){
         pokemons = new ArrayList<>();
+
     }
 
     @Override
@@ -44,12 +45,19 @@ public class Pokedex implements IPokedex{
     }
 
     @Override
-    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-        return null;
+    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException {
+        PokemonMetadata pokemonMetadata = getPokemonMetadata(index);
+        if(pokemonMetadata == null)
+            throw new PokedexException("Invalid index");
+        return new Pokemon(index,pokemonMetadata.getName(),pokemonMetadata.getAttack(),pokemonMetadata.getDefense(),pokemonMetadata.getStamina(),cp,hp,dust,candy,5);
     }
 
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-        return null;
+        Pokemon pokemon = getPokemon(index);
+
+        PokemonMetadata metadata = new PokemonMetadata(pokemon.getIndex(), pokemon.getName(), pokemon.getAttack(), pokemon.getDefense(), pokemon.getStamina());
+
+        return metadata;
     }
 }

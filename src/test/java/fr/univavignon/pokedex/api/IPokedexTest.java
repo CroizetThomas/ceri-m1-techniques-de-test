@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -65,5 +66,27 @@ public class IPokedexTest {
         assertEquals(expectedSort, sortedPokemons);
     }
 
+    @Test
+    public void testCreatePokemon() throws PokedexException {
+        Pokedex pokedex = new Pokedex();
+        Pokemon createdPokemon = pokedex.createPokemon(1, 100, 100, 100, 100);
 
+        Assert.assertEquals(1, createdPokemon.getIndex());
+        Assert.assertEquals(100, createdPokemon.getCp());
+        Assert.assertEquals(100, createdPokemon.getHp());
+        Assert.assertEquals(100, createdPokemon.getDust());
+        Assert.assertEquals(100, createdPokemon.getCandy());
+    }
+    @Test
+    public void testGetPokemonMetadata() throws PokedexException {
+        Pokedex pokedex = new Pokedex();
+        Pokemon createdPokemon = pokedex.createPokemon(1, 100, 100, 100, 100);
+        PokemonMetadata metadata = pokedex.getPokemonMetadata(1);
+
+        Assert.assertEquals(createdPokemon.getIndex(), metadata.getIndex());
+        Assert.assertEquals(createdPokemon.getName(), metadata.getName());
+        Assert.assertEquals(createdPokemon.getAttack(), metadata.getAttack());
+        Assert.assertEquals(createdPokemon.getDefense(), metadata.getDefense());
+        Assert.assertEquals(createdPokemon.getStamina(), metadata.getStamina());
+    }
 }
