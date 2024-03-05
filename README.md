@@ -1,5 +1,12 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
+CROIZET Thomas
+M1-ILSEN alternant gr2
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/CroizetThomas/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/CroizetThomas/ceri-m1-techniques-de-test/tree/master)
+[![codecov](https://codecov.io/gh/CroizetThomas/ceri-m1-techniques-de-test/graph/badge.svg?token=9YZ1EYRCNV)](https://codecov.io/gh/CroizetThomas/ceri-m1-techniques-de-test)
+
+
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
