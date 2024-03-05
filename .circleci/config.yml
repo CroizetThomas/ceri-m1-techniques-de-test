@@ -15,8 +15,8 @@ jobs:
       - codecov/upload:
           file: target/site/jacoco/jacoco.xml
       - run:
-        name: Upload Coverage Report
-        command: bash <(curl -s https://codecov.io/bash)
+          name: Upload Coverage Report
+          command: bash <(curl -s https://codecov.io/bash)
 
 workflows:
   upload-to-codecov:
