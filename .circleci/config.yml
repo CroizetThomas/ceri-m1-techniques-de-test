@@ -11,9 +11,15 @@ jobs:
           name: Tests
           command: mvn test
 workflows:
+  upload-to-codecov:
+    jobs:
+      - checkout
+      - codecov/upload
   build:
     jobs:
       - test:
         filters:
           branches:
             only: master
+orbs:
+  codecov: codecov/codecov@4.0.1
