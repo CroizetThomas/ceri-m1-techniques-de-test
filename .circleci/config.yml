@@ -19,6 +19,9 @@ jobs:
       - run:
           name: Run Checkstyle
           command: mvn checkstyle:checkstyle
+      - run:
+          name: Generate Badges
+          command: mvn com.github.bordertech.buildtools:badger:badges
 
 workflows:
   upload-to-codecov:

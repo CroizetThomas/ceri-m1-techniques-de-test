@@ -5,6 +5,7 @@ M1-ILSEN alternant gr2
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/CroizetThomas/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/CroizetThomas/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/CroizetThomas/ceri-m1-techniques-de-test/graph/badge.svg?token=9YZ1EYRCNV)](https://codecov.io/gh/CroizetThomas/ceri-m1-techniques-de-test)
+[![Checkstyle](]]
 
 
 ## Introduction
