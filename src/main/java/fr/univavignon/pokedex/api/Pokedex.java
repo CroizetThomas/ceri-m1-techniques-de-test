@@ -49,15 +49,16 @@ public class Pokedex implements IPokedex{
         PokemonMetadata pokemonMetadata = getPokemonMetadata(index);
         if(pokemonMetadata == null)
             throw new PokedexException("Invalid index");
-        return new Pokemon(index,pokemonMetadata.getName(),pokemonMetadata.getAttack(),pokemonMetadata.getDefense(),pokemonMetadata.getStamina(),cp,hp,dust,candy,5);
+        pokemons.add(new  Pokemon(index, pokemonMetadata.getName(), pokemonMetadata.getAttack(), pokemonMetadata.getDefense(), pokemonMetadata.getStamina(),cp,hp,dust, candy,5));
+        return pokemons.get(pokemons.size()-1);
     }
 
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-        Pokemon pokemon = getPokemon(index);
-
-        PokemonMetadata metadata = new PokemonMetadata(pokemon.getIndex(), pokemon.getName(), pokemon.getAttack(), pokemon.getDefense(), pokemon.getStamina());
-
-        return metadata;
+        for(int i = 0; i<pokemons.size(); i++){
+            if (pokemons.get(i).getIndex() == index)
+                return new PokemonMetadata(index,pokemons.get(i).getName(),pokemons.get(i).getAttack(),pokemons.get(i).getDefense(),pokemons.get(i).getStamina());
+        }
+        return null;
     }
 }

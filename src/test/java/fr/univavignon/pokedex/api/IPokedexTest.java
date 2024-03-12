@@ -23,7 +23,7 @@ public class IPokedexTest {
     public void setUp() throws PokedexException {
         pokedex = new Pokedex();
 
-        pokemonBulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+        pokemonBulbizarre = new Pokemon(1, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
         pokemonAquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
 
         pokedex.addPokemon(pokemonBulbizarre);
@@ -39,13 +39,13 @@ public class IPokedexTest {
 
     @Test
     public void testAddPokemon() {
-        assertEquals(0, pokedex.addPokemon(pokemonBulbizarre));
+        assertEquals(1, pokedex.addPokemon(pokemonBulbizarre));
         assertEquals(133, pokedex.addPokemon(pokemonAquali));
     }
 
     @Test
     public void testGetPokemon() throws PokedexException {
-        assertEquals(pokemonBulbizarre, pokedex.getPokemon(0));
+        assertEquals(pokemonBulbizarre, pokedex.getPokemon(1));
         assertEquals(pokemonAquali, pokedex.getPokemon(133));
     }
 
@@ -68,7 +68,6 @@ public class IPokedexTest {
 
     @Test
     public void testCreatePokemon() throws PokedexException {
-        Pokedex pokedex = new Pokedex();
         Pokemon createdPokemon = pokedex.createPokemon(1, 100, 100, 100, 100);
 
         Assert.assertEquals(1, createdPokemon.getIndex());
@@ -79,14 +78,12 @@ public class IPokedexTest {
     }
     @Test
     public void testGetPokemonMetadata() throws PokedexException {
-        Pokedex pokedex = new Pokedex();
-        Pokemon createdPokemon = pokedex.createPokemon(1, 100, 100, 100, 100);
-        PokemonMetadata metadata = pokedex.getPokemonMetadata(1);
+        PokemonMetadata pokemonMetadata = pokedex.getPokemonMetadata(1);
 
-        Assert.assertEquals(createdPokemon.getIndex(), metadata.getIndex());
-        Assert.assertEquals(createdPokemon.getName(), metadata.getName());
-        Assert.assertEquals(createdPokemon.getAttack(), metadata.getAttack());
-        Assert.assertEquals(createdPokemon.getDefense(), metadata.getDefense());
-        Assert.assertEquals(createdPokemon.getStamina(), metadata.getStamina());
+        Assert.assertEquals(1, pokemonMetadata.getIndex());
+        Assert.assertEquals("Bulbizarre", pokemonMetadata.getName());
+        Assert.assertEquals(126, pokemonMetadata.getAttack());
+        Assert.assertEquals(126, pokemonMetadata.getDefense());
+        Assert.assertEquals(90, pokemonMetadata.getStamina());
     }
 }
