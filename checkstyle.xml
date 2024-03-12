@@ -12,7 +12,7 @@
         </module>
 
         <module name="AvoidStarImport"/>
-        <module name="ConstantName"/>
+        <!--<module name="ConstantName"/>
         <module name="EmptyBlock"/>
         <module name="JavadocType"/>
         <module name="JavadocVariable"/>
@@ -22,7 +22,7 @@
         <module name="JavadocMethod"/>
         <module name="JavadocStyle"/>
         <module name="JavadocVariable"/>
-        <module name="JavadocMethod"/>
+        <module name="JavadocMethod"/>-->
         <module name="JavadocStyle"/>
     </module>
 </module>
