@@ -6,7 +6,6 @@ package fr.univavignon.pokedex.api;
  * @author fv
  */
 public class PokemonMetadata {
-
 	/** Pokemon index. **/
 	private final int index;
 

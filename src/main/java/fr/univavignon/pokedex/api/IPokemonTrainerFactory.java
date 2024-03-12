@@ -6,7 +6,6 @@ package fr.univavignon.pokedex.api;
  * @author fv
  */
 public interface IPokemonTrainerFactory {
-
 	/**
 	 * Creates and returns a PokemonTrainer instance.
 	 * 

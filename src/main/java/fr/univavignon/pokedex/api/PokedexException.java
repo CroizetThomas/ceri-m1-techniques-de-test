@@ -6,7 +6,6 @@ package fr.univavignon.pokedex.api;
  * @author fv
  */
  public final class PokedexException extends Exception {
-
    /** Serialization index. **/
    private static final long serialVersionUID = 1L;
 

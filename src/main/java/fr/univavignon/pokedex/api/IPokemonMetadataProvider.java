@@ -7,7 +7,6 @@ package fr.univavignon.pokedex.api;
  * @author fv
  */
 public interface IPokemonMetadataProvider {
-
 	/**
 	 * Retrieves and returns the metadata for the pokemon
 	 * denoted by the given <tt>index</tt>.

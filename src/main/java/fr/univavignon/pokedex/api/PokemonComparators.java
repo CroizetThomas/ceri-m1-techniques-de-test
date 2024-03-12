@@ -8,7 +8,6 @@ import java.util.Comparator;
  * @author fv
  */
 public enum PokemonComparators implements Comparator<Pokemon> {
-
 	/** Comparator using Pokemon name. **/
 	NAME(Comparator.comparing(Pokemon::getName)),
 

@@ -6,7 +6,6 @@ package fr.univavignon.pokedex.api;
  * @author fv
  */
 public interface IPokedexFactory {
-
 	/**
 	 * Creates a new pokedex instance using the given 
 	 * <tt>metadataProvider</tt> and <tt>pokemonFactory</tt>. 

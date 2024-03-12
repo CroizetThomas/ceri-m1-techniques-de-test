@@ -10,14 +10,13 @@ import java.util.List;
  * @author fv
  */
 public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
-	
 	/**
 	 * Returns the number of pokemon this pokedex contains.
 	 * 
 	 * @return Number of pokemon in this pokedex.
 	 */
 	int size();
-	
+
 	/**
 	 * Adds the given <tt>pokemon</tt> to this pokedex and returns
 	 * it unique index.
@@ -26,7 +25,7 @@ public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
 	 * @return Index of this pokemon relative to this pokedex.
 	 */
 	int addPokemon(Pokemon pokemon);
-	
+
 	/**
 	 * Locates the pokemon identified by the given <tt>id</tt>.
 	 * 

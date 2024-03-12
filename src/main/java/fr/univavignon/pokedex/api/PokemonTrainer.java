@@ -6,7 +6,6 @@ package fr.univavignon.pokedex.api;
  * @author fv
  */
 public class PokemonTrainer {
-
 	/** Trainer name. **/
 	private final String name;
 
