@@ -18,7 +18,7 @@ jobs:
           command: bash <(curl -s https://codecov.io/bash)
       - run:
           name: Run Checkstyle
-          command: mvn checkstyle:check
+          command: mvn checkstyle:checkstyle
 
 workflows:
   upload-to-codecov:
