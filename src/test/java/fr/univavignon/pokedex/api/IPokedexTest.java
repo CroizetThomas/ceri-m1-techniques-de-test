@@ -11,13 +11,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class IPokedexTest {
 
     private IPokedex pokedex;
     private Pokemon pokemonBulbizarre;
     private Pokemon pokemonAquali;
-
 
     @Before
     public void setUp() throws PokedexException {
@@ -29,8 +27,6 @@ public class IPokedexTest {
         pokedex.addPokemon(pokemonBulbizarre);
         pokedex.addPokemon(pokemonAquali);
     }
-
-
 
     @Test
     public void testSize() {
@@ -76,6 +72,7 @@ public class IPokedexTest {
         Assert.assertEquals(100, createdPokemon.getDust());
         Assert.assertEquals(100, createdPokemon.getCandy());
     }
+
     @Test
     public void testGetPokemonMetadata() throws PokedexException {
         PokemonMetadata pokemonMetadata = pokedex.getPokemonMetadata(1);
