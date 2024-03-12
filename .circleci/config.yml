@@ -16,6 +16,9 @@ jobs:
       - run:
           name: Upload Coverage Report
           command: bash <(curl -s https://codecov.io/bash)
+      - run:
+          name: Run Checkstyle
+          command: mvn checkstyle:check
 
 workflows:
   upload-to-codecov:
