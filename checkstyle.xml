@@ -3,26 +3,26 @@
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
-    <module name="JavadocPackage"/>
-    <module name="FileTabCharacter"/>
+<!--    <module name="JavadocPackage"/>-->
+<!--    <module name="FileTabCharacter"/>-->
     <module name="TreeWalker">
 
-        <!--<module name="MethodLength">
+        <module name="MethodLength">
             <property name="max" value="50"/>
         </module>
 
-        <module name="AvoidStarImport"/>
-        <module name="ConstantName"/>
-        <module name="EmptyBlock"/>
-        <module name="JavadocType"/>
-        <module name="JavadocVariable"/>
-        <module name="JavadocMethod"/>
-        <module name="JavadocStyle"/>
-        <module name="JavadocVariable"/>
-        <module name="JavadocMethod"/>
-        <module name="JavadocStyle"/>
-        <module name="JavadocVariable"/>
-        <module name="JavadocMethod"/>-->
-        <module name="JavadocStyle"/>
+<!--        <module name="AvoidStarImport"/>-->
+<!--        <module name="ConstantName"/>-->
+<!--        <module name="EmptyBlock"/>-->
+<!--        <module name="JavadocType"/>-->
+<!--        <module name="JavadocVariable"/>-->
+<!--        <module name="JavadocMethod"/>-->
+<!--        <module name="JavadocStyle"/>-->
+<!--        <module name="JavadocVariable"/>-->
+<!--        <module name="JavadocMethod"/>-->
+<!--        <module name="JavadocStyle"/>-->
+<!--        <module name="JavadocVariable"/>-->
+<!--        <module name="JavadocMethod"/>-->
+<!--        <module name="JavadocStyle"/>-->
     </module>
 </module>
