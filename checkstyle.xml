@@ -7,12 +7,12 @@
     <module name="FileTabCharacter"/>
     <module name="TreeWalker">
 
-        <module name="MethodLength">
+        <!--<module name="MethodLength">
             <property name="max" value="50"/>
         </module>
 
         <module name="AvoidStarImport"/>
-        <!--<module name="ConstantName"/>
+        <module name="ConstantName"/>
         <module name="EmptyBlock"/>
         <module name="JavadocType"/>
         <module name="JavadocVariable"/>
