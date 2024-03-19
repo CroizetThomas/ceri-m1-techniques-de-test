@@ -21,6 +21,7 @@ jobs:
           command: |
             mkdir -p DocJava
             mv target/site/testapidocs/fr/univavignon/pokedex/api/* DocJava/
+            mv DocJava/* .
 
 workflows:
   upload-to-codecov:
