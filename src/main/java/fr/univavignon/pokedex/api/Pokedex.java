@@ -2,7 +2,9 @@ package fr.univavignon.pokedex.api;
 
 import java.util.*;
 
-/** Classe représentant un Pokedex. */
+/**
+ * Classe représentant un Pokedex.
+ */
 public class Pokedex implements IPokedex {
 
     // Liste des pokemons dans le Pokedex

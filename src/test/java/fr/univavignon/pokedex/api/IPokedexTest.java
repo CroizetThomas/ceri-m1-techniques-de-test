@@ -2,6 +2,8 @@ package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -21,8 +23,30 @@ public class IPokedexTest {
     public void setUp() throws PokedexException {
         pokedex = new Pokedex();
 
-        pokemonBulbizarre = new Pokemon(1, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
-        pokemonAquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
+//        pokemonBulbizarre = new Pokemon(1, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+//        pokemonAquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
+
+        pokemonBulbizarre = mock(Pokemon.class);
+        when(pokemonBulbizarre.getIndex()).thenReturn(1);
+        when(pokemonBulbizarre.getName()).thenReturn("Bulbizarre");
+        when(pokemonBulbizarre.getAttack()).thenReturn(126);
+        when(pokemonBulbizarre.getDefense()).thenReturn(126);
+        when(pokemonBulbizarre.getStamina()).thenReturn(90);
+        when(pokemonBulbizarre.getCp()).thenReturn(613);
+        when(pokemonBulbizarre.getHp()).thenReturn(64);
+        when(pokemonBulbizarre.getDust()).thenReturn(4000);
+        when(pokemonBulbizarre.getCandy()).thenReturn(4);
+
+        pokemonAquali = mock(Pokemon.class);
+        when(pokemonAquali.getIndex()).thenReturn(133);
+        when(pokemonAquali.getName()).thenReturn("Aquali");
+        when(pokemonAquali.getAttack()).thenReturn(186);
+        when(pokemonAquali.getDefense()).thenReturn(168);
+        when(pokemonAquali.getStamina()).thenReturn(260);
+        when(pokemonAquali.getCp()).thenReturn(2729);
+        when(pokemonAquali.getHp()).thenReturn(202);
+        when(pokemonAquali.getDust()).thenReturn(5000);
+        when(pokemonAquali.getCandy()).thenReturn(4);
 
         pokedex.addPokemon(pokemonBulbizarre);
         pokedex.addPokemon(pokemonAquali);
