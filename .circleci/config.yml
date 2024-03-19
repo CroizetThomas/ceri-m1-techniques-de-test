@@ -17,15 +17,10 @@ jobs:
           command: mvn checkstyle:checkstyle
 
       - run:
-          name: Push Javadoc to GitHub Pages
+          name: Copy Javadoc to DocJava directory
           command: |
-            git config --global user.email "thom.croiz18@gmail.com"
-            git config --global user.name "CroizetThomas"
-            git checkout -b gh-pages
-            mv target/site/testapidocs/fr/univavignon/pokedex/api/* docs/
-            git add docs
-            git commit -m "Update Javadoc [ci skip]"
-            git push origin HEAD:gh-pages
+            mkdir -p DocJava
+            mv target/site/testapidocs/fr/univavignon/pokedex/api/* DocJava/
 
 workflows:
   upload-to-codecov:
