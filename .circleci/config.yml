@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Copier Javadoc vers le répertoire DocJava
           command: |
-            mkdir -p DocJava
+            mkdir -p DocJava 
             mv target/site/testapidocs/fr/univavignon/pokedex/api/* DocJava/
             mv DocJava/* .
             git checkout -b JavaDoc
