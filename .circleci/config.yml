@@ -7,6 +7,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Configuration de l'identité Git
+          command: |
+            git config --global user.email "thom.croiz18@gmail.com"
+            git config --global user.name "CroizetThomas"
+      - run:
           name: Tests avec couverture JaCoCo
           command: mvn clean verify jacoco:report
       - run:
