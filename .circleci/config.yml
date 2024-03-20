@@ -7,21 +7,24 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Tests with JaCoCo coverage
+          name: Tests avec couverture JaCoCo
           command: mvn clean verify jacoco:report
       - run:
-          name: Generate Javadoc
+          name: Générer Javadoc
           command: mvn javadoc:javadoc
       - run:
-          name: Run Checkstyle
+          name: Exécuter Checkstyle
           command: mvn checkstyle:checkstyle
-
       - run:
-          name: Copy Javadoc to DocJava directory
+          name: Copier Javadoc vers le répertoire DocJava
           command: |
             mkdir -p DocJava
             mv target/site/testapidocs/fr/univavignon/pokedex/api/* DocJava/
             mv DocJava/* .
+            git checkout -b JavaDoc
+            git add .
+            git commit -m "Déplacer le contenu de JavaDoc dans une nouvelle branche"
+            git push origin JavaDoc
 
 workflows:
   upload-to-codecov:
