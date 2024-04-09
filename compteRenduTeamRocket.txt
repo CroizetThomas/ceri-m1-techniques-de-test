@@ -1,0 +1,7 @@
+La mèthode generateRandomStat déjà utilise une boucle avec 1 million d'itérations (consommation excessive de ressources?).
+
+Des valeurs statiques sont défini pour certains pokemon comme Bulbasaur ce qui fausse completement les statistiques de ces pokemons.
+
+Ensuite L'IV des pokemons sont défini à 0 si l'index est négatif sinon à 1.
+
+Les nom des pokemon sont stocké dans une map en statique.
